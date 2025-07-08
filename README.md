@@ -24,3 +24,9 @@ add examples folder with wav file / or link
 
 # cache and out dir
 c:\Users\<username>\AppData\Local\langrepeater\
+
+
+# Note on Code Generation
+Parts of this project were programmed with the assistance of a large language model (LLM).
+As such, some code may not reflect standard best practices or optimal design choices.
+Contributions and improvements are welcome! 
