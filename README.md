@@ -18,9 +18,10 @@ make GCP setup for STT (link???)
 [langrepeater_md.py](src/langrepeater_md.py)
 [langrepeater_whisper.py](src/langrepeater_whisper.py)
 
-need example wav for
 [langrepeater_whisper.py](src/langrepeater_whisper.py)
-add examples folder with wav file / or link
+example:
+audio/fairytale_1.wav
+
 
 # cache and out dir
 c:\Users\<username>\AppData\Local\langrepeater\
