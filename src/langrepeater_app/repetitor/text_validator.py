@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 # Basic Latin letters and digits
 _BASE_LATIN_DIGITS = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
 # Common punctuation and symbols allowed
-_SPEC_SYMBOLS = set(" |.,?!;:'\"\\-()/“”’‘+%$&") # Added common quotes
+_SPEC_SYMBOLS = set(" |.,?!;:'\"\\-()/“”’‘+%$&»«") # Added common quotes
 # German specific characters allowed german set
 _DE_UMLAUTS_SZ = set("äöüßÄÖÜ")
 # Cyrillic characters

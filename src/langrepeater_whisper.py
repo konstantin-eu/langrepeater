@@ -2,11 +2,13 @@ import argparse
 from src.lib_clean import lr_compiler_srt
 from src.lib_clean.lib_common import get_app_dir, get_app_whisper_dir, get_app_wav_dir
 from src.lib_clean.my_faster_whisper_json_args import run_faster_whisper
-from src.whisper_vad_silero_vad import do_whiper_vad_silero
 from src.lib_clean.lr_compiler_whisper_words_json_to_srt import do_lr_compiler_whisper_json
 from src.langrepeater_app.main import langrepeater_main
 
 import time
+
+from src.lib_clean.whisper_vad_silero_vad import do_whiper_vad_silero
+
 my_app_start_time = time.time()
 print(f"app time start: {__name__} {my_app_start_time}")
 
@@ -94,7 +96,7 @@ def main():
         }
 
     # call whisper
-    if False and step_4_whisper:
+    if step_4_whisper:
         # fast whisper
         if data is None:
             raise ValueError("no data!")
@@ -111,7 +113,7 @@ def main():
         lr_compiler_srt.do_lr_compiler_srt_to_lr_txt_format_and_translate(generated_srt_file_from_whisper_json, output_file)
 
     if step_7_run_langrepeater:
-        print("create_video: " + args.create_video)
+        print("create_video: " + str(args.create_video))
         langrepeater_main(output_file, args.create_video)
 
     my_app_end_time = time.time()
