@@ -1,3 +1,12 @@
+# Langrepeater German learning python STT/TTS/ML tool stack
+The main idea behind this learning approach is listening to custom/individually made media material where each german word/phrase is auto translated and repeated 3 times. This allows to consume german material and improve vocabulary combining german learning with your everyday activities(dish washing, walking, gym, etc.). There is no need to rewind back to re hear the phrase of pause to translated word.
+There are 2 types of materials provided by The Langrepeater German learning stack: 
+1. The Langrepeater German learning stack support any material in form of markdown output from any LLM(ChatGpt, Gemini, etc.).
+The LLM output will be parsed, german words and phrases will be detected using ML model https://huggingface.co/igorsterner/german-english-code-switching-identification
+And then DE or EN google cloud platform TTS(text to speech) will generate speech for each segment separately to improve TTS quality.
+Then video/audio track with subtitles is specially compiled so each german phrase is repeated 3 times followed by auto translated to english speech.
+Generated Video media can be played in any video player on phone or laptop. Also for better experience I developed android app(TODO link) that uses generated audio track with subtitles. The app supports rewind by subtitles(jump to text/prev subttile) and text copying which improves experience greatly. 
+
 # requirements
 GCP account for TTS. For eng TTS base voice is used, practically cost free, there is some free amount per months that is hard use.
 for German tts poly voice ? is used, from my experience practically cost free.
