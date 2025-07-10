@@ -7,6 +7,8 @@ And then DE or EN google cloud platform TTS(text to speech) will generate speech
 Then video/audio track with subtitles is specially compiled so each german phrase is repeated 3 times followed by auto translated to english speech.
 Generated Video media can be played in any video player on phone or laptop. Also for better experience I developed android app(TODO link) that uses generated audio track with subtitles. The app supports rewind by subtitles(jump to text/prev subttile) and text copying which improves experience greatly. For details see [langrepeater_md.py](src/langrepeater_md.py) section below.
 TODO add example video and android app
+TODO write to igorsterner/german-english-code-switching-identification to add reference
+TODO write openai discussion regarding hallucination reduction
 2. Audio(wav file) material. Could be movie, song, any material. The audion file is transcribed special way to reduce model hallucinations using TTS model Faster Whisper. Transcription is broken down into complete sentences. Each complete german sentecnce is combined with aoto translated to english text and final subtitle is generated. Then special video player for windows(TODO add link) can be used with support of repetition of each subtitle and rewinding to the next subtitle - very convenient for Language learning. TODO. add video player link. Or my android app(TODO add link) can be used same way, except only audio track(no video) is played.
 TODO add example video and android app
 
