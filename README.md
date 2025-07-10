@@ -16,6 +16,13 @@ make GCP setup for STT (link???)
 
 # commands with arguments
 [langrepeater_md.py](src/langrepeater_md.py)
+```
+usage: langrepeater_md.py [-h] [-o OUTFILE] [--create_audio] infile
+```
+OUTFILE - override where to store langrepeater txt format file
+--create_audio - create audio and subtitles instead of video file for android app (TODO link to android app)
+
+
 [langrepeater_whisper.py](src/langrepeater_whisper.py)
 
 [langrepeater_whisper.py](src/langrepeater_whisper.py)
@@ -23,7 +30,8 @@ example:
 audio/fairytale_1.wav
 
 
-# cache and out dir
+# app dir
+includes tts cache and out dir with generated media
 c:\Users\<username>\AppData\Local\langrepeater\
 
 

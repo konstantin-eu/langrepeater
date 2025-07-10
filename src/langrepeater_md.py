@@ -21,7 +21,7 @@ def get_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
-        "--create_video",
+        "--create_audio",
         action="store_true",
         help="If set, a video will be created"
     )
@@ -47,7 +47,7 @@ def main():
         default_out
     )
 
-    langrepeater_main(default_out, args.create_video)
+    langrepeater_main(default_out, args.create_audio)
 
 if __name__ == "__main__":
     main()

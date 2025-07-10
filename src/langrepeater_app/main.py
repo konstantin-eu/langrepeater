@@ -118,8 +118,8 @@ def run_track_processing(cfg: LanguageRepetitorConfig, track_identifier: str):
     logger.info(f"--- Successfully finished processing track: {track_identifier} ---")
 
 
-def langrepeater_main(track_in, create_video = False):
-    print(f"track_in:{track_in} create_video:{create_video}")
+def langrepeater_main(track_in, create_audio = False):
+    print(f"track_in:{track_in} create_audio:{create_audio}")
 
     # global logger
     """Main application entry point."""
@@ -158,7 +158,7 @@ def langrepeater_main(track_in, create_video = False):
     for track_id in tracks_to_process:
         try:
             # Create a specific config for this track run
-            cfg = create_config(track_identifier=track_id, create_video=create_video)
+            cfg = create_config(track_identifier=track_id, create_video=(not create_audio))
             run_track_processing(cfg, track_id)
         except ConfigError as e:
              logger.error(f"Configuration error for track {track_id}: {e}", exc_info=True)

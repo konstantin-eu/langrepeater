@@ -34,7 +34,7 @@ def get_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
-        "--create_video",
+        "--create_audio",
         action="store_true",
         help="If set, a video will be created"
     )
@@ -113,8 +113,8 @@ def main():
         lr_compiler_srt.do_lr_compiler_srt_to_lr_txt_format_and_translate(generated_srt_file_from_whisper_json, output_file)
 
     if step_7_run_langrepeater:
-        print("create_video: " + str(args.create_video))
-        langrepeater_main(output_file, args.create_video)
+        print("create_audio: " + str(args.create_audio))
+        langrepeater_main(output_file, args.create_audio)
 
     my_app_end_time = time.time()
     print(f" app time end: {__name__} {my_app_end_time}")
