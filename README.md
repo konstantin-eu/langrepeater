@@ -1,11 +1,12 @@
 # Langrepeater German learning python STT/TTS/ML tool stack
 The main idea behind this learning approach is listening to custom/individually made media material where each german word/phrase is auto translated and repeated 3 times. This allows to consume german material and improve vocabulary combining german learning with your everyday activities(dish washing, walking, gym, etc.). There is no need to rewind back to re hear the phrase of pause to translated word.
-There are 2 types of materials provided by The Langrepeater German learning stack: 
-1. The Langrepeater German learning stack support any material in form of markdown output from any LLM(ChatGpt, Gemini, etc.).
+There are 2 types of materials supported by The Langrepeater German learning stack: 
+1. Text(markdown) material. The Langrepeater German learning stack support any material in form of markdown output from any LLM(ChatGpt, Gemini, etc.).
 The LLM output will be parsed, german words and phrases will be detected using ML model https://huggingface.co/igorsterner/german-english-code-switching-identification
 And then DE or EN google cloud platform TTS(text to speech) will generate speech for each segment separately to improve TTS quality.
 Then video/audio track with subtitles is specially compiled so each german phrase is repeated 3 times followed by auto translated to english speech.
-Generated Video media can be played in any video player on phone or laptop. Also for better experience I developed android app(TODO link) that uses generated audio track with subtitles. The app supports rewind by subtitles(jump to text/prev subttile) and text copying which improves experience greatly. 
+Generated Video media can be played in any video player on phone or laptop. Also for better experience I developed android app(TODO link) that uses generated audio track with subtitles. The app supports rewind by subtitles(jump to text/prev subttile) and text copying which improves experience greatly. For details see [langrepeater_md.py](src/langrepeater_md.py) section below.
+2. Audio(wav file) material. Could be movie, song, any material. The audion file is transcribed special way to reduce model hallucinations using TTS model Faster Whisper. Transcription is broken down into complete sentences. Each complete german sentecnce is combined with aoto translated to english text and final subtitle is generated. Then special video player for windows(TODO add link) can be used with support of repetition of each subtitle and rewinding to the next subtitle - very convenient for Language learning. TODO. add video player link. Or my android app(TODO add link) can be used same way, except only audio track(no video) is played.
 
 # requirements
 GCP account for TTS. For eng TTS base voice is used, practically cost free, there is some free amount per months that is hard use.
@@ -39,8 +40,8 @@ usage: langrepeater_whisper.py [-h] [--lrtxt_outdir LRTXT_OUTDIR]
                                [--create_audio]
                                infile
 ~~~
-The commands produces special subtitles using faster whisper. TPlease not this is not just a translcribtion using whisper, isnetead floowing os done:
-a) by default openai whisper and faster whisper (https://github.com/SYSTRAN/faster-whisper) transcribtion quality can be not good because of hallucinations(https://github.com/openai/whisper/discussions/1783) (from my understanding, especially for non english speech). To mitigate this I first detect speech segments in audio track using https://github.com/snakers4/silero-vad and then run faster whisper STT model with speech segments
+The commands produces special subtitles using faster whisper. TPlease not this is not just a transcription using Whisper, instead following os done:
+a) by default Openai Whisper and Faster Whisper (https://github.com/SYSTRAN/faster-whisper) transcription quality can be not good because of hallucinations(for details see https://github.com/openai/whisper/discussions/1783 , from my understanding, especially for non english speech). To mitigate this problem I first detect speech segments in audio track using https://github.com/snakers4/silero-vad and then run faster whisper STT model with speech segments
 b) transcription with word timestamps are generated
 c) transcription is broken down into complete sentences https://spacy.io/ and subtitles are generated
 d) english translation is added to german subtitles
