@@ -5,7 +5,7 @@ There are 2 types of materials supported by The Langrepeater German learning sta
 The LLM output will be parsed, german words and phrases will be detected using ML model https://huggingface.co/igorsterner/german-english-code-switching-identification
 And then DE or EN google cloud platform TTS(text to speech) will generate speech for each segment separately to improve TTS quality.
 Then video/audio track with subtitles is specially compiled so each german phrase is repeated 3 times followed by auto translated to english speech.
-Generated Video media can be played in any video player on phone or laptop. Also for better experience I developed android app(TODO link) that uses generated audio track with subtitles. The app supports rewind by subtitles(jump to text/prev subttile) and text copying which improves experience greatly. For details see [langrepeater_md.py](src/langrepeater_md.py) section below.
+Generated Video media can be played in any video player on phone or laptop. Also for better experience I developed android app(https://github.com/konstantin-eu/lr-player) that uses generated audio track with subtitles. The app supports rewind by subtitles(jump to text/prev subttile) and text copying which improves experience greatly. For details see [langrepeater_md.py](src/langrepeater_md.py) section below.
 TODO add example video and android app
 TODO write to igorsterner/german-english-code-switching-identification to add reference
 TODO write openai discussion regarding hallucination reduction
@@ -18,7 +18,7 @@ for German tts poly voice ? is used, from my experience practically cost free.
 
 install ffmpeg, make command available in PATH command line
 
-# installation/build
+# installation/build/config
 
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
@@ -26,7 +26,10 @@ pip install -r requirements.txt
 
 create src/langrepeater_app/.env from src/langrepeater_app/.env.template
 
-make GCP setup for STT (link???) 
+make GCP setup for STT (link???)
+
+I'm building and testing in windows 11, python 3.12, GPU NVIDIA GeForce RTX 4060 Ti
+
 
 # commands with arguments
 [langrepeater_md.py](src/langrepeater_md.py)
@@ -67,6 +70,9 @@ c:\Users\<username>\AppData\Local\langrepeater\
 # Note on Code Generation
 Parts of this project were programmed with the assistance of a large language model (LLM).
 As such, some code may not reflect standard best practices or optimal design choices.
-Contributions and improvements are welcome! 
+Contributions and improvements are welcome!
+
+# translation models
+TODO
 
 # license
