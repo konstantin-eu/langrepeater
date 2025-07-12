@@ -6,10 +6,9 @@ The LLM output will be parsed, german words and phrases will be detected using M
 And then DE or EN google cloud platform TTS(text to speech) will generate speech for each segment separately to improve TTS quality.
 Then video/audio track with subtitles is specially compiled so each german phrase is repeated 3 times followed by auto translated to english speech.
 Generated Video media can be played in any video player on phone or laptop. Also for better experience I developed android app(https://github.com/konstantin-eu/lr-player) that uses generated audio track with subtitles. The app supports rewind by subtitles(jump to text/prev subttile) and text copying which improves experience greatly. For details see [langrepeater_md.py](src/langrepeater_md.py) section below.
-TODO add example video and android app
+example video https://www.youtube.com/watch?v=M8L4Ac__jgU generated from German Possessive Adjectives markdown [example1.md](examples_md/example1.md) produced by chetGpt using prompt "Provide example phrases in German to remember German possessive adjectives for 1st person singular".  
 TODO write to igorsterner/german-english-code-switching-identification to add reference
 TODO write openai discussion regarding hallucination reduction
-example chatGpt prompt "Explain every case when I should put the verb to the end of the sentence in German", output: [example1.md](examples_md/example1.md)
 
 2. Audio(wav file) material. Could be movie, song, any material. The audion file is transcribed special way to reduce model hallucinations using TTS model Faster Whisper. Transcription is broken down into complete sentences. Each complete german sentecnce is combined with aoto translated to english text and final subtitle is generated. Then special video player for windows(TODO add link) can be used with support of repetition of each subtitle and rewinding to the next subtitle - very convenient for Language learning. TODO. add video player link. Or my android app(TODO add link) can be used same way, except only audio track(no video) is played.
 TODO add example video and android app
@@ -76,5 +75,3 @@ Contributions and improvements are welcome!
 
 # translation models
 TODO
-
-# license
