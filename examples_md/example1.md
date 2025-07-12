@@ -1,145 +1,49 @@
-In German, word order can change depending on the sentence type, and one key pattern is placing the **verb at the end of the sentence**. This happens in several specific grammatical contexts. Here's a breakdown of **every major case** when you put the **main** or **infinitive/past participle** verb at the **end** of a clause:
+### **Nominative – Subject (who or what?)**
+
+Used when *"my..."* is the subject of the sentence.
+
+* **Mein** Hund ist freundlich. – *My dog is friendly.* (masculine)
+* **Meine** Tasche ist schwer. – *My bag is heavy.* (feminine)
+* **Mein** Auto ist alt. – *My car is old.* (neuter)
+* **Meine** Freunde sind pünktlich. – *My friends are punctual.* (plural)
 
 ---
 
-### ✅ 1. **Subordinate Clauses**
+### **Accusative – Direct Object (whom or what?)**
 
-When a clause is introduced by a **subordinating conjunction** (like *weil*, *dass*, *ob*, etc.), the **conjugated verb** goes to the **end**.
+Used when *"my..."* is the direct object of the verb.
 
-#### Example:
-
-* Ich weiß, **dass** er morgen **kommt**.
-  ("I know that he is coming tomorrow.")
-
-#### Common subordinating conjunctions:
-
-* **dass** – that
-* **weil** – because
-* **ob** – whether/if
-* **wenn** – if/when
-* **als** – when (past)
-* **bevor**, **nachdem**, **obwohl**, etc.
+* Ich streichle **meinen** Hund. – *I pet my dog.* (masculine)
+* Ich suche **meine** Tasche. – *I'm looking for my bag.* (feminine)
+* Ich putze **mein** Auto. – *I clean my car.* (neuter)
+* Ich besuche **meine** Freunde. – *I visit my friends.* (plural)
 
 ---
 
-### ✅ 2. **Relative Clauses**
+### **Dative – Indirect Object (to whom or for whom?)**
 
-These clauses describe a noun and begin with a **relative pronoun** (*der, die, das*, etc.). The verb goes to the end.
+Used when *"my..."* is the indirect object, often with prepositions or verbs like "give" or "help."
 
-#### Example:
-
-* Das ist der Mann, **der** gestern hier **war**.
-  ("That's the man who was here yesterday.")
-
----
-
-### ✅ 3. **Infinitive Clauses**
-
-When a sentence includes an **infinitive with "zu"**, the **"zu + infinitive"** goes to the **end** of the clause.
-
-#### Example:
-
-* Ich habe vergessen, das Fenster **zu schließen**.
-  ("I forgot to close the window.")
+* Ich spiele mit **meinem** Hund. – *I play with my dog.* (masculine)
+* Ich gebe **meinem** Auto einen Namen. – *I give my car a name.* (neuter)
+* Ich helfe **meiner** Schwester. – *I help my sister.* (feminine)
+* Ich danke **meinen** Freunden. – *I thank my friends.* (plural)
 
 ---
 
-### ✅ 4. **Modal + Infinitive (Double Infinitive)**
+### **Genitive – Possession (whose?)**
 
-When using **two verbs** (e.g. modal + infinitive), the **infinitive** is at the end.
+Used to express possession, often in written or formal contexts.
 
-#### Example:
-
-* Ich will nach Hause **gehen**.
-  ("I want to go home.")
-
-When using perfect tense with modal verbs, both infinitives go at the end:
-
-* Er hat gehen **wollen**.
-  ("He wanted to go.")
+* Wegen **meines** Hundes stehe ich früh auf. – *Because of my dog, I get up early.*
+* Trotz **meines** Autos fahre ich oft Rad. – *Despite my car, I often ride a bike.*
+* Aufgrund **meiner** Arbeit reise ich viel. – *Due to my work, I travel a lot.*
+* Trotz **meiner** Freunde bleibe ich konzentriert. – *Despite my friends, I stay focused.*
 
 ---
 
-### ✅ 5. **Perfect, Pluperfect, and Future Tenses**
+### **Learning Tip:**
 
-In compound tenses, the **past participle or infinitive** goes to the **end**.
+Picture the object (dog, car, bag) as you read the sentence. Say it out loud and emphasize the **"mein-"** form. This creates a strong mental link between the form, the image, and the case. With repetition, you'll remember the endings naturally.
 
-#### Example (perfect):
-
-* Ich habe das Buch **gelesen**.
-  ("I have read the book.")
-
-#### Example (pluperfect):
-
-* Er hatte das Fenster **geöffnet**.
-  ("He had opened the window.")
-
-#### Example (future):
-
-* Ich werde morgen kommen. → Ich werde morgen **kommen**.
-  ("I will come tomorrow.")
-
----
-
-### ✅ 6. **Indirect Speech (with "dass")**
-
-Same as subordinate clauses—verb goes to the end.
-
-#### Example:
-
-* Er sagt, **dass** er keine Zeit **hat**.
-  ("He says that he has no time.")
-
----
-
-### ✅ 7. **"Um...zu", "ohne...zu", "anstatt...zu" Clauses**
-
-These constructions also push the **"zu + infinitive"** to the end.
-
-#### Examples:
-
-* Er lernt viel, **um** die Prüfung zu **bestehen**.
-* Sie ging, **ohne** ein Wort zu **sagen**.
-* Anstatt zu arbeiten, hat er geschlafen.
-
----
-
-### ✅ 8. **After Certain Expressions or Verbs**
-
-Some expressions trigger a **zu-infinitive clause** where the verb goes at the end.
-
-#### Examples:
-
-* Es ist wichtig, **pünktlich zu kommen**.
-* Ich habe keine Lust, **das zu machen**.
-
----
-
-### ✅ 9. **Nested Clauses**
-
-In embedded subordinate clauses (a clause within a clause), the **final verb** still goes to the **very end**.
-
-#### Example:
-
-* Ich glaube, dass sie sagte, dass er morgen nicht **kommt**.
-  ("I think that she said that he is not coming tomorrow.")
-
----
-
-### Summary Chart
-
-| Case                                | Verb Position              |
-| ----------------------------------- | -------------------------- |
-| Subordinate clause                  | At the end                 |
-| Relative clause                     | At the end                 |
-| Infinitive clauses (zu)             | At the end                 |
-| Modal + infinitive                  | At the end                 |
-| Compound tenses                     | Past participle at the end |
-| Indirect speech with *dass*         | At the end                 |
-| *um...zu*, *ohne...zu*              | At the end                 |
-| Expressions needing *zu*-infinitive | At the end                 |
-| Nested subordinate clauses          | At the end                 |
-
----
-
-Would you like example sentences for each with translations or a quiz to test yourself on this?
+Let me know if you want the same for 2nd or 3rd person!

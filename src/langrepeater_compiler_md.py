@@ -27,7 +27,8 @@ def _node_text(node: object) -> str:
         return node.content           # the actual characters
     return ""                         # List, ListItem, Paragraph, …
 
-min_de_len = 30
+# minimum length of de text to be repeated
+min_de_len = 20
 
 
 def clean_text(line):
