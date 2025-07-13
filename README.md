@@ -13,7 +13,7 @@ example video https://www.youtube.com/watch?v=XFTBIWYSbRA from [audio/german_fai
 
 # requirements
 GCP account for TTS. For eng TTS base voice is used, practically cost free, there is some free amount per months that is hard use.
-for German tts poly voice ? is used, from my experience practically cost free.
+for German tts polyglot voice https://cloud.google.com/text-to-speech/docs/polyglot is used, from my experience practically cost free.
 
 install ffmpeg, make command available in PATH command line
 
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 create src/langrepeater_app/.env from src/langrepeater_app/.env.template
 
-make GCP setup for STT (link???)
+make GCP setup for python STT https://cloud.google.com/python/docs/setup
 
 I'm building and testing in windows 11, python 3.12, GPU NVIDIA GeForce RTX 4060 Ti
 
