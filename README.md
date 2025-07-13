@@ -1,81 +1,73 @@
-# LangRepeater German learning python STT/TTS/ML tool stack
-The main idea behind this learning approach is listening to custom/individually made media material where each german word/phrase is auto translated and repeated 3 times. This allows to consume german material and improve vocabulary combining german learning with your everyday activities(dish washing, walking, gym, etc.). There is no need to rewind back to hear the phrase again of pause to translated word.
-There are 2 types of materials supported by The LangRepeater German learning stack: 
-1. Text(markdown) material. The LangRepeater German learning stack support any material in form of markdown output from any LLM(ChatGpt, Gemini, etc.).
-The LLM output will be parsed, german words and phrases will be detected using ML model https://huggingface.co/igorsterner/german-english-code-switching-identification
-And then DE or EN google cloud platform TTS(text to speech) will generate speech for each segment separately to improve TTS quality.
-Then video/audio track with subtitles is specially compiled so each german phrase is repeated 3 times followed by auto translated to english speech.
-Generated Video media can be played in any video player on phone or laptop. Also for better experience I developed android app(https://github.com/konstantin-eu/lr-player) that uses generated audio track with subtitles. The app supports rewind by subtitles(jump to text/prev subttile) and text copying which improves experience greatly. For details see [langrepeater_md.py](src/langrepeater_md.py) section below.
-example video https://www.youtube.com/watch?v=M8L4Ac__jgU generated from German Possessive Adjectives markdown [example1.md](examples_md/example1.md) produced by chetGpt using prompt "Provide example phrases in German to remember German possessive adjectives for 1st person singular".  
+# LangRepeater: German Learning Tool with Python, STT/TTS, and ML
 
-2. Audio(wav file) material. Could be movie, song, any material. The audion file is transcribed special way to reduce model hallucinations using TTS model Faster Whisper. Transcription is broken down into complete sentences. Each complete german sentecnce is combined with aoto translated to english text and final subtitle is generated. Then special video player for windows(https://github.com/konstantin-eu/lr-player-wpf) can be used with support of repetition of each subtitle and rewinding to the next subtitle - very convenient for Language learning. Or my android app(https://github.com/konstantin-eu/lr-player) can be used same way, except only audio track(no video) is played.
-example video https://www.youtube.com/watch?v=XFTBIWYSbRA from [audio/german_fairytale_llm_1.wav](audio/german_fairytale_llm_1.wav)
+The main idea behind this learning approach is to listen to custom, individually created media materials where each German word or phrase is automatically translated and repeated three times. This allows you to consume German content and improve your vocabulary while combining language learning with everyday activities (e.g., dishwashing, walking, or going to the gym). There's no need to rewind to hear a phrase again or pause to look up translations.
 
-# requirements
-GCP account for TTS. For eng TTS base voice is used, practically cost free, there is some free amount per months that is hard use.
-for German tts polyglot voice https://cloud.google.com/text-to-speech/docs/polyglot is used, from my experience practically cost free.
+LangRepeater supports two types of materials:
+1. **Text (Markdown) Material**: The stack supports any material in Markdown format, such as output from LLMs (e.g., ChatGPT, Gemini). The Markdown is parsed, and German words/phrases are detected using the ML model from [igorsterner/german-english-code-switching-identification](https://huggingface.co/igorsterner/german-english-code-switching-identification). Google Cloud Platform TTS (Text-to-Speech) generates speech for each segment separately (using DE or EN voices) to improve quality. A video/audio track with subtitles is then compiled, where each German phrase is repeated three times, followed by its English translation. The generated video can be played in any video player on a phone or laptop. For a better experience, use the custom Android app ([konstantin-eu/lr-player](https://github.com/konstantin-eu/lr-player)), which supports the audio track with subtitles, rewinding by subtitle, jumping to previous subtitles, and text copying. For details, see the [langrepeater_md.py](#langrepeater_mdpy) section below.
 
-install ffmpeg, make command available in PATH command line
+   Example video: [YouTube](https://www.youtube.com/watch?v=M8L4Ac__jgU), generated from the German Possessive Adjectives Markdown file [example1.md](examples_md/example1.md), produced by ChatGPT using the prompt: "Provide example phrases in German to remember German possessive adjectives for 1st person singular."
 
-# installation/build/config
+2. **Audio (WAV File) Material**: This can be from movies, songs, or any other source. The audio is transcribed using Faster Whisper to reduce model hallucinations. The transcription is broken down into complete sentences, each combined with an auto-translated English version to generate subtitles. Use the custom Windows video player ([konstantin-eu/lr-player-wpf](https://github.com/konstantin-eu/lr-player-wpf)) for repetition of each subtitle and rewinding to the next one—ideal for language learning. Alternatively, the Android app ([konstantin-eu/lr-player](https://github.com/konstantin-eu/lr-player)) can play the audio track (without video) with the same features.
 
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+   Example video: [YouTube](https://www.youtube.com/watch?v=XFTBIWYSbRA), from [german_fairytale_llm_1.wav](audio/german_fairytale_llm_1.wav).
 
-pip install -r requirements.txt
+## Requirements
+- A Google Cloud Platform (GCP) account for TTS. The English TTS uses a base voice (practically cost-free with monthly free quotas). The German TTS uses the Polyglot voice ([cloud.google.com/text-to-speech/docs/polyglot](https://cloud.google.com/text-to-speech/docs/polyglot)), which is also effectively cost-free based on typical usage.
+- Install FFmpeg and ensure the `ffmpeg` command is available in your PATH.
 
-create src/langrepeater_app/.env from src/langrepeater_app/.env.template
+## Installation, Build, and Configuration
+- Install PyTorch with CUDA support (for GPU acceleration):
+  ```
+  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+  ```
+- Install project dependencies:
+  ```
+  pip install -r requirements.txt
+  ```
+- Create `src/langrepeater_app/.env` from `src/langrepeater_app/.env.template`.
+- Set up GCP for Python TTS: Follow the guide at [cloud.google.com/python/docs/setup](https://cloud.google.com/python/docs/setup).
 
-make GCP setup for python STT https://cloud.google.com/python/docs/setup
+This project was built and tested on Windows 11 with Python 3.12 and an NVIDIA GeForce RTX 4060 Ti GPU.
 
-I'm building and testing in windows 11, python 3.12, GPU NVIDIA GeForce RTX 4060 Ti
+## Usage: Commands and Arguments
 
+### langrepeater_md.py
+Processes Markdown files for German learning material (e.g., grammar, phrases, word examples from LLMs like ChatGPT).
 
-# commands with arguments
-[langrepeater_md.py](src/langrepeater_md.py)
 ```
 usage: langrepeater_md.py [-h] [-o OUTFILE] [--create_audio] infile
 ```
-infile - markdown file, can be LLM(cheatGpt) output with german learning material(grammar, phrases, word examples)
-OUTFILE - override where to store langrepeater txt format file
---create_audio - create audio and subtitles instead of video file for android app (https://github.com/konstantin-eu/lr-player)
+- `infile`: Path to the Markdown file.
+- `-o OUTFILE` / `--outfile OUTFILE`: Override the output path for the LangRepeater TXT format file.
+- `--create_audio`: Generate audio and subtitles (instead of a video file) for the Android app ([konstantin-eu/lr-player](https://github.com/konstantin-eu/lr-player)).
 
+### langrepeater_whisper.py
+Generates special subtitles using Faster Whisper STT (Speech-to-Text). Note: This is not a simple transcription. Instead:
+- Speech segments are detected using [snakers4/silero-vad](https://github.com/snakers4/silero-vad) to mitigate hallucinations in OpenAI Whisper/Faster Whisper (see discussion: [openai/whisper#1783](https://github.com/openai/whisper/discussions/1783)).
+- Transcriptions with word timestamps are generated.
+- Text is broken into complete sentences using [spaCy](https://spacy.io/).
+- English translations are added to German subtitles.
 
-[langrepeater_whisper.py](src/langrepeater_whisper.py)
-~~~
-usage: langrepeater_whisper.py [-h] [--lrtxt_outdir LRTXT_OUTDIR]
-                               [--create_audio]
-                               infile
-~~~
-The commands produces special subtitles using faster whisper. TPlease not this is not just a transcription using Whisper, instead following os done:
-a) by default Openai Whisper and Faster Whisper (https://github.com/SYSTRAN/faster-whisper) transcription quality can be not good because of hallucinations(for details see https://github.com/openai/whisper/discussions/1783 , from my understanding, especially for non english speech). To mitigate this problem I first detect speech segments in audio track using https://github.com/snakers4/silero-vad and then run faster whisper STT model with speech segments
-b) transcription with word timestamps are generated
-c) transcription is broken down into complete sentences https://spacy.io/ and subtitles are generated
-d) english translation is added to german subtitles
-e) Optionally my special windows Video player can be used with support of repetition of each subtitle and rewinding to the next subtitle - very convenient for Language learning (https://github.com/konstantin-eu/lr-player-wpf)
+If `--create_audio` is not set, a video is generated that can be played in the custom Windows video player ([konstantin-eu/lr-player-wpf](https://github.com/konstantin-eu/lr-player-wpf)) with subtitle repetition and rewinding features.
 
-infile - wav file with german speech (could be anything, movies, podcasts, songs, learning materials)
---create_audio - create audio and subtitles instead of video file for android app (https://github.com/konstantin-eu/lr-player)
-example infile in git:
-audio/fairytale_1.wav
+```
+usage: langrepeater_whisper.py [-h] [--lrtxt_outdir LRTXT_OUTDIR] [--create_audio] infile
+```
+- `infile`: Path to the WAV file with German speech (e.g., movies, podcasts, songs, learning materials). Example in repo: [fairytale_1.wav](audio/fairytale_1.wav).
+- `--lrtxt_outdir LRTXT_OUTDIR`: Override the output directory for LangRepeater TXT files.
+- `--create_audio`: Generate audio and subtitles (instead of a video file) for the Android app ([konstantin-eu/lr-player](https://github.com/konstantin-eu/lr-player)).
 
-When video is generated(--create_audio is not set) - my special windows Video player can by used with support of repetition of each subtitle and rewinding to the next subtitle - very convenient for Language learnig. 
+## App Directory
+Includes TTS cache and output directory for generated media:  
+`C:\Users\<username>\AppData\Local\langrepeater\`
 
+## Note on Code Generation
+Parts of this project were programmed with the assistance of a large language model (LLM). As such, some code may not reflect standard best practices or optimal design choices. Contributions and improvements are welcome!
 
-# app dir
-includes tts cache and out dir with generated media
-c:\Users\<username>\AppData\Local\langrepeater\
+## Translation Models
+- [facebook/nllb-200-distilled-600M](https://huggingface.co/facebook/nllb-200-distilled-600M)
+- [jbochi/madlad400-3b-mt](https://huggingface.co/jbochi/madlad400-3b-mt)
 
-
-# Note on Code Generation
-Parts of this project were programmed with the assistance of a large language model (LLM).
-As such, some code may not reflect standard best practices or optimal design choices.
-Contributions and improvements are welcome!
-
-# translation models
-https://huggingface.co/facebook/nllb-200-distilled-600M
-https://huggingface.co/jbochi/madlad400-3b-mt
-
-
-# Contact
-Feel free to reach out!
+## Contact
+Feel free to reach out!  
 Email: [langrepeater@gmail.com](mailto:langrepeater@gmail.com)
