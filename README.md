@@ -75,3 +75,7 @@ Contributions and improvements are welcome!
 
 # translation models
 TODO
+
+# Contact
+Feel free to reach out!
+Email: [langrepeater@gmail.com](mailto:langrepeater@gmail.com)
